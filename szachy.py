@@ -29,8 +29,12 @@ class Szachownica:
         self.pola = pola
     def setup(self, pieces):
         for pole in self.pola:
-            #do uzupelnienia
-            pass
+            for szach in pieces:
+                if pole.pozycja == szach.obecnaPozycja:
+                    pole.szach = szach
+                    szach.obecnaPozycja = pole
+
+
 
     def pustePola(self):
         pustePola = []
